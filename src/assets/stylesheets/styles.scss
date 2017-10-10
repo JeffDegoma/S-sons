@@ -1,0 +1,52 @@
+
+$brand-purple: rgb(135,140,223);
+$brand-green: rgb(153,251,198);
+$font-size: 1em;
+
+
+body {
+    height: 100vh;
+    background-color: $brand-purple;
+    color: $brand-green;
+    font-size: $font-size;   
+}
+
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+    overflow: visible;
+
+}
+
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.quadrants {
+    display:flex;
+    width: 50%;
+    height: 50%;
+    border: 1px solid black;
+    margin: 0px -1px;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+
+.q-container {
+    margin: auto;
+    height: 50%;
+    width: 50%;
+}

@@ -22,31 +22,75 @@ html, body {
 }
 
 
+
+#gameTable {
+    margin: auto;
+    border: 1px solid #333333;
+}
+#gameTable td {
+    background-repeat: no-repeat;
+    border: 1px solid #333333;
+}
+
 .container {
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.quadrants {
-    display:flex;
-    width: 50%;
-    height: 50%;
-    border: 1px solid black;
-    margin: 0px -1px;
-}
 
-.pull-left {
-    float: left;
-}
-
-.pull-right {
-    float: right;
-}
-
-
-.q-container {
+.char_box {
     margin: auto;
-    height: 50%;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    width:140px;
+    min-height:140px;
+    background: url('https://avatar.artofproblemsolving.com/avatar_329151.png?t=1506894453');
+    background-repeat: no-repeat;
+    background-position: center;
+    // background:url('https://wh1k8zidop.inscname.net/games/images/4f0f01b92db2f933064dfa6c203c50ac.jpg');
 }
+
+.d_extra {
+    margin: auto
+}
+
+
+.d_value {
+    text-align: center;
+    font-size:12pt;
+    background-color:#FFFFFF;
+    min-height: 14px;
+    color:#000000;
+}
+
+
+table > tbody> tr> td {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+// .quadrants {
+//     display:flex;
+//     width: 50%;
+//     height: 50%;
+//     border: 1px solid black;
+//     margin: 0px -1px;
+// }
+
+// .pull-left {
+//     float: left;
+// }
+
+// .pull-right {
+//     float: right;
+// }
+
+
+// .q-container {
+//     margin: auto;
+//     height: 50%;
+//     width: 50%;
+// }

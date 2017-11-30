@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import UserForm from './UserForm'
 import GameTable from './GameTable'
 
-let tasks = ['hey']
-
 
 class App extends React.Component {
 

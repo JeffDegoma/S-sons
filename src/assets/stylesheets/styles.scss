@@ -21,15 +21,30 @@ html, body {
 
 }
 
-
+* {
+    text-decoration: none;
+    list-style-type: none;
+}
 
 #gameTable {
+    display: flex;
     margin: auto;
     border: 1px solid #333333;
 }
 #gameTable td {
     background-repeat: no-repeat;
     border: 1px solid #333333;
+}
+
+#gameTable > ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.avatar {
+    margin: auto;
+    border-radius:50%
 }
 
 .container {
@@ -40,12 +55,11 @@ html, body {
 
 
 .char_box {
-    margin: auto;
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
-    width:140px;
-    min-height:140px;
-    background: url('https://avatar.artofproblemsolving.com/avatar_329151.png?t=1506894453');
+    width: 220px;
+    min-height:150px;
     background-repeat: no-repeat;
     background-position: center;
     // background:url('https://wh1k8zidop.inscname.net/games/images/4f0f01b92db2f933064dfa6c203c50ac.jpg');
@@ -55,6 +69,9 @@ html, body {
     margin: auto
 }
 
+.list-item {
+    padding: 10px;
+}
 
 .d_value {
     text-align: center;

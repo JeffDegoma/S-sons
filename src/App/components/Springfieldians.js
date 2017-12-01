@@ -4,7 +4,7 @@ import React from 'react'
 const Item = ({character}) => {
     return (
 
-    <img className='avatar' height='120px' width='120px' alt='avatar' src={character.imageUrl}/>
+    <img className='avatar' height='150px' width='150px' alt='avatar' src={character.imageUrl}/>
 
     );
 }

@@ -1,38 +1,37 @@
 import React from 'react';
-import characters from '../character';
 import Item from './Springfieldians';
 
 
 
 class GameTable extends React.Component {
-    constructor(){
-        super()
-        this.state = {
-            characters: [...characters]
-        }
+    constructor(props){
+        super(props)
+   
+        this.handleGuess = this.handleGuess.bind(this)
     }
 
-    render(){
-        let simpChars = this.state.characters.map((character, index) => {  
+    handleGuess(e) {
+        this.props.handleSubmit(e.target.value)
+    }
+
+
+    render() {
+        let simpChars = this.props.characters.map((character, index) => {  
             return(
-                    <td key={index}>
+                    <li className="list-item" key={index}>
                         <div className="char_box">
-                            <div className="d_extra">
-                                <Item character={character}/>
-                            </div>
-                            <div className="d_value">{character.firstName} {character.lastName}</div>
+                            <Item character={character}/>
+                            <div className="d_value" value={this.handleGuess}></div>
                         </div>
-                    </td>
+                    </li>
             )
         })
         return (
-            <table id="gameTable">
-                <tbody>         
-                <tr>
-                   {simpChars}
-                </tr>
-                </tbody>
-            </table>         
+            <div id="gameTable">
+                <ul>
+                    { simpChars }
+                </ul>
+            </div>         
         )
     }
 

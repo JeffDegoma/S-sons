@@ -20,33 +20,25 @@ import React from 'react';
 //     )
 // }
 
+//App is the common owner of the state
+//pass it down to the UserForm
 class UserForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            input: ''
-        }
+        
         this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleSubmit(ev) {
-        ev.preventDefault()
-        const name = this.state.input
-        alert(`${name}!`)
-    }
 
     handleChange(ev) {
-        this.setState({
-            input: ev.target.value
-        })
+        this.props.onTextChange(ev.target.value)
     }
 
     render() {
         return (
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.handleSubmit}>
             <label>Type here, man:
-            <input type="text" onChange={this.handleChange} value={this.state.input} name="submittedName" placeholder="Bart Simpson"/>
+            <input type="text" onChange={this.handleChange} value={this.props.text} name="submittedName" placeholder="Bart Simpson"/>
             </label>
             <input type="submit"/>
         </form>

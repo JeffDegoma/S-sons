@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import UserForm from './UserForm'
 import GameTable from './GameTable'
-import characters from '../character';
 
 
 class App extends React.Component {
@@ -9,43 +8,46 @@ class App extends React.Component {
      constructor(props) {
         super(props);
         this.state = {
-            characters: [...characters],
-            text: ''
+            text: '',
+            characterName: '',
+            guessed: false
         }  
         this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleCharacterChange = this.handleCharacterChange.bind(this)
+        // this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    //takes in a text input and sets state.text
     handleChange(text) {
       this.setState({
         text
       })
-      console.log(text)
+      // console.log(text)
+    }
+
+    handleCharacterChange(text) {
+        this.setState({
+            characterName: text,
+            guessed: !this.state.guessed
+        })
+        console.log("From App", text)
     }
       
-    handleSubmit(ev) {
-      ev.preventDefault()
-      const name = [].concat(this.state.characters.map(character => character.firstName))
-      
-      //if they get the name wrong
-      if(name.indexOf(this.state.text) === -1){
-        console.log('I don\'t know that character!...haw haw!' )
-
-      } 
-
-    }
 
    
     render(){
       return (
         <div className="container">
             <h2 className="title">Can you name them all?</h2>
-            <GameTable characters={this.state.characters}
-                       handleGuess={this.handleSubmit}
+            <GameTable characters={this.props.chars}
+                       people={this.state.characterName}
+
             />
             <UserForm onTextChange={this.handleChange}
                       text={this.state.text}
-                      handleSubmit={this.handleSubmit}
+                      chars={this.props.chars} 
+                      characterChanged={this.handleCharacterChange}
+
              />
         </div>
       )

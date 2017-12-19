@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import UserForm from './UserForm'
 import GameTable from './GameTable'
 import Fader from './Fader';
+import ReactDOM from 'react-dom';
 
 
 class App extends React.Component {
@@ -27,23 +28,15 @@ class App extends React.Component {
       let arr = [].concat(this.props.chars.filter(character => character.guessed !== true))
         this.setState({
             characterName: text,
-            characters: arr
+            characters: arr,
+            text: ''
         })
     }
-      
 
     charsGuessedProp() {
       //if they're all true?
       let arr = [].concat(this.props.chars.filter(character => character.guessed === true))
       console.log('charsGuessed?', arr)
-   
-      // return arr.filter((booln) => {
-      //   if(booln){
-      //     this.setState({
-      //       guessed: !this.state.guessed
-      //     })
-      //   }
-      // })
     }
    
     render(){
@@ -56,13 +49,11 @@ class App extends React.Component {
                        text={this.state.text}
                        onTextChange={this.handleChange}
 
-
             />
             <UserForm onTextChange={this.handleChange}
                       text={this.state.text}
                       chars={this.props.chars} 
                       handleSubmit={this.handleCharacterSubmit}
-
              />
         </div>
       )

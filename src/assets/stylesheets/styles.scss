@@ -31,10 +31,7 @@ html, body {
     margin: auto;
     // border: 1px solid #333333;
 }
-#gameTable td {
-    background-repeat: no-repeat;
-    border: 1px solid #333333;
-}
+
 
 #gameTable > ul {
     display: flex;
@@ -44,7 +41,7 @@ html, body {
 
 .avatar {
     margin: auto;
-    border-radius:50%
+    border-radius: 50%
 }
 
 .container {
@@ -59,9 +56,11 @@ html, body {
     display: flex;
     flex-direction: column;
     width: 220px;
-    min-height:150px;
+    min-height:180px;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 5px;
+    margin: 2px
 }
 
 .d_extra {
@@ -85,10 +84,12 @@ html, body {
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
   width: 100%
 }
 
+.title {
+    margin: auto;
+}
 
 .example-enter {
   opacity: 0.01;
@@ -106,6 +107,15 @@ html, body {
 .example-leave.example-leave-active {
   opacity: 0.01;
   transition: opacity 5ms ease-in;
+}
+
+form {
+    font-size: 30px;
+    margin: auto
+}
+
+form > label > input {
+    font-size: 30px;
 }
 
 // .quadrants {

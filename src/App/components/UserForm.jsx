@@ -1,6 +1,8 @@
 import React from 'react';
 import Fader from './Fader';
 import swal from 'sweetalert';
+import ReactDOM from 'react-dom';
+
 
 // const onSubmit = ev => {
 //     ev.preventDefault();
@@ -36,22 +38,22 @@ class UserForm extends React.Component {
     handleSubmit(ev) {
         ev.preventDefault()
         let name = [].concat(this.props.chars.filter((character, index) => {
-            if (character.firstName === this.props.text.toUpperCase() || character.fullName === this.props.text.toUpperCase()){
+            if (character.firstName === this.props.text.toUpperCase().trim() || character.fullName === this.props.text.toUpperCase().trim()){
                return character.guessed = !character.guessed
             }
         }))
         if(name.length !== 0){
-                this.props.handleSubmit(this.props.text) 
-            }else{
-                swal(`DOH! ${this.props.text} doesn\'t exist!`)
-            }
+            this.props.handleSubmit(this.props.text) 
+        }else{
+            swal(`DOH! ${this.props.text.toUpperCase()} doesn\'t exist!`)
+        }
     }
 
     render() {
         return (
         <form onSubmit={this.handleSubmit}>
             <label>Type here, man:
-            <input type="text" onChange={this.handleChange} value={this.props.text} name="submittedName" placeholder="Bart Simpson"/>
+            <input type="text" onChange={this.handleChange} value={this.props.text} name="submittedName" placeholder="apu"/>
             </label>
             <input type="submit"/>
         </form>

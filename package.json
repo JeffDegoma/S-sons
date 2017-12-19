@@ -31,5 +31,9 @@
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
+  },
+  "dependencies": {
+    "react-transition-group": "^1.2.1",
+    "sweetalert": "^2.1.0"
   }
 }

@@ -1,28 +1,176 @@
 const character = [
     {
-        firstName: 'Ned',
-        lastName: 'Flanders',
+        firstName: 'NED',
+        lastName: 'FLANDERS',
+        fullName: 'NED FLANDERS',
         imageUrl: 'https://rebrand.ly/ffad',
         guessed: false,
-        id: 0
     },
     {
-        firstName: 'Lisa',
-        lastName: 'Simpson',
+        firstName: 'LISA',
+        lastName: 'SIMPSON',
+        fullName: 'LISA SIMPSON',
         imageUrl: 'https://rebrand.ly/25f6',
         guessed: false,
-        id: 1
 
     },
-     {
-        firstName: 'Carl',
-        lastName: 'Carlson',
+    {
+        firstName: 'CARL',
+        lastName: 'CARLSON',
+        fullName: 'CARL CARLSON',
         imageUrl: 'https://rebrand.ly/2267',
         guessed: false,
-        id: 2
-
     },
-]
+    {
+        firstName: 'LENNY',
+        lastName: 'LEONARD',
+        fullName: 'LENNY LENOARD',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'WAYLAN',
+        lastName: 'SMITHERS',
+        fullName: 'WAYLAN SMITHERS',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'MAGGIE',
+        lastName: 'SIMPSON',
+        fullName: 'MAGGIE SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'HOMER',
+        lastName: 'SIMPSON',
+        fullName: 'HOMER SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'MARGE',
+        lastName: 'SIMPSON',
+        fullName: 'MARGE SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'GRANPA',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'HERSHAL',
+        lastName: 'KRUSTOFSKY',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
+    {
+        firstName: 'BART',
+        lastName: 'SIMPSON',
+        fullName: 'BART SIMPSON',
+        imageUrl: 'https://rebrand.ly/2267',
+        guessed: false,
+    },
 
+
+    
+]
 
 export default character;

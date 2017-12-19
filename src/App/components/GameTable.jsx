@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from './Springfieldians';
-
+import Fader from './Fader';
 
 
 class GameTable extends React.Component {
@@ -8,23 +8,43 @@ class GameTable extends React.Component {
         super(props)
     }
 
-    //use people prop and guessed prop?
     render() {
-        let simpChars = this.props.characters.map((character, index) => { 
-        let name = character.firstName !== this.props.people ? `` : `${this.props.people}`
-            return(
-                    <li className="list-item" key={index}>
-                        <div className="char_box">
-                            <Item character={character}/>
-                            <div className="d_value" value={this.props.people}>{name}</div>
-                        </div>
-                    </li>
-            )
-        })
+        let simpChars;
+        let name;
+        
+        //while there's nothing in the array
+        if(this.props.charName === ''){
+            simpChars = this.props.startingChars.map((character, index) => { 
+            name = character.fullName !== this.props.text.toUpperCase() ? `` : `${this.props.text}`
+            
+                return (
+                    <div className="char_box" key={index}>
+                        <Item character={character}/>
+                        <input type="text" className="d_value" value={name} />
+                    </div>
+                )
+            })
+        } else {
+            simpChars = this.props.characters.map((character, index) =>{
+            name = character.fullName !== this.props.text.toUpperCase() ? `` : `${this.props.text}`
+
+                return (
+                    <div className="char_box" key={index}>
+                        <Item character={character}/>
+                        <input type="text" className="d_value" value={name} />
+                    </div>
+                )
+            })
+        }
+
         return (
             <div id="gameTable">
                 <ul>
-                    { simpChars }
+                    <li>
+                    <Fader>
+                        { simpChars }
+                    </Fader>
+                    </li>
                 </ul>
             </div>         
         )

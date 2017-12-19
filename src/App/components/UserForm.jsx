@@ -1,4 +1,6 @@
 import React from 'react';
+import Fader from './Fader';
+import swal from 'sweetalert';
 
 // const onSubmit = ev => {
 //     ev.preventDefault();
@@ -20,8 +22,6 @@ import React from 'react';
 //     )
 // }
 
-//App is the common owner of the state
-//pass it down to the UserForm
 class UserForm extends React.Component {
     constructor(props) {
         super(props);
@@ -34,22 +34,17 @@ class UserForm extends React.Component {
     }
 
     handleSubmit(ev) {
-      ev.preventDefault()
-      console.log("Props from UserForm", this.props)
-      const name = [].concat(this.props.chars.map((character, index) => character.firstName))
-        // if they get the name wrong
-        // if(name.firstName !== this.props.text) {
-        //   console.log('I don\'t know that character!...haw haw!' )
-        //   return;
-        // } 
-        if(name.indexOf(this.props.text) === -1){
-          console.log('I don\'t know that character!...haw haw!' )
-          return;
-        } else {
-          this.props.characterChanged(this.props.text)
-        }
-
-        return name;
+        ev.preventDefault()
+        let name = [].concat(this.props.chars.filter((character, index) => {
+            if (character.firstName === this.props.text.toUpperCase() || character.fullName === this.props.text.toUpperCase()){
+               return character.guessed = !character.guessed
+            }
+        }))
+        if(name.length !== 0){
+                this.props.handleSubmit(this.props.text) 
+            }else{
+                swal(`DOH! ${this.props.text} doesn\'t exist!`)
+            }
     }
 
     render() {
@@ -63,6 +58,9 @@ class UserForm extends React.Component {
         )
     }
 }
+
+//if user guesses the same person already
+
 
 
 export default UserForm;

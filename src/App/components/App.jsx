@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import UserForm from './UserForm'
 import GameTable from './GameTable'
+import Fader from './Fader';
 
 
 class App extends React.Component {
@@ -10,43 +11,57 @@ class App extends React.Component {
         this.state = {
             text: '',
             characterName: '',
-            guessed: false
+            characters: {}
         }  
         this.handleChange = this.handleChange.bind(this)
-        this.handleCharacterChange = this.handleCharacterChange.bind(this)
-        // this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleCharacterSubmit = this.handleCharacterSubmit.bind(this)
     }
 
-    //takes in a text input and sets state.text
     handleChange(text) {
       this.setState({
         text
       })
-      // console.log(text)
     }
 
-    handleCharacterChange(text) {
+    handleCharacterSubmit(text) {
+      let arr = [].concat(this.props.chars.filter(character => character.guessed !== true))
         this.setState({
             characterName: text,
-            guessed: !this.state.guessed
+            characters: arr
         })
-        console.log("From App", text)
     }
       
 
+    charsGuessedProp() {
+      //if they're all true?
+      let arr = [].concat(this.props.chars.filter(character => character.guessed === true))
+      console.log('charsGuessed?', arr)
+   
+      // return arr.filter((booln) => {
+      //   if(booln){
+      //     this.setState({
+      //       guessed: !this.state.guessed
+      //     })
+      //   }
+      // })
+    }
    
     render(){
       return (
         <div className="container">
             <h2 className="title">Can you name them all?</h2>
-            <GameTable characters={this.props.chars}
-                       people={this.state.characterName}
+            <GameTable characters={this.state.characters}
+                       charName={this.state.characterName}
+                       startingChars={this.props.chars}
+                       text={this.state.text}
+                       onTextChange={this.handleChange}
+
 
             />
             <UserForm onTextChange={this.handleChange}
                       text={this.state.text}
                       chars={this.props.chars} 
-                      characterChanged={this.handleCharacterChange}
+                      handleSubmit={this.handleCharacterSubmit}
 
              />
         </div>

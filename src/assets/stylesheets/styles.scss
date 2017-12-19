@@ -2,11 +2,12 @@
 $brand-purple: rgb(135,140,223);
 $brand-green: rgb(153,251,198);
 $font-size: 1em;
+$body-bg : url('../images/bg.png');
 
 
 body {
     height: 100vh;
-    background-color: $brand-purple;
+    background: $body-bg;
     color: $brand-green;
     font-size: $font-size;   
 }
@@ -27,9 +28,8 @@ html, body {
 }
 
 #gameTable {
-    display: flex;
     margin: auto;
-    border: 1px solid #333333;
+    // border: 1px solid #333333;
 }
 #gameTable td {
     background-repeat: no-repeat;
@@ -62,7 +62,6 @@ html, body {
     min-height:150px;
     background-repeat: no-repeat;
     background-position: center;
-    // background:url('https://wh1k8zidop.inscname.net/games/images/4f0f01b92db2f933064dfa6c203c50ac.jpg');
 }
 
 .d_extra {
@@ -82,12 +81,32 @@ html, body {
 }
 
 
-// table > tbody> tr> td {
-//     display: flex;
-//     flex-wrap: wrap;
-// }
+.fader-parent {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 100%
+}
 
 
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 600ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 5ms ease-in;
+}
 
 // .quadrants {
 //     display:flex;

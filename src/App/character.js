@@ -96,7 +96,22 @@ const character = [
         fullName: 'AGNES SKINNER',
         imageUrl: 'https://rebrand.ly/c33f',
         guessed: false,
+    },
+    {
+        firstName: 'MANJULA',
+        lastName: 'NAHASAPEEMAPETILON',
+        fullName: 'MANJULA NAHASAPEEMAPETILON',
+        imageUrl: 'https://rebrand.ly/swingbcc8',
+        guessed: false,
+    },
+    {
+        firstName: 'ROD',
+        lastName: 'FLANDERS',
+        fullName: 'RODD FLANDERS',
+        imageUrl: 'https://rebrand.ly/c33f',
+        guessed: false,
     }
+
 
 
     

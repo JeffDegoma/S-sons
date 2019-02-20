@@ -1,0 +1,25 @@
+FROM node:6.11.4 as builder
+
+#inside the container, in root filesystem
+RUN mkdir /simpsons
+
+#becomes active working directory
+WORKDIR /simpsons
+
+#copies into active working directory. for development, copy everything.
+COPY . .
+
+#install dependencies
+RUN npm i
+RUN npm rebuild node-sass
+
+RUN npm run build
+
+
+# Copy built app into nginx container
+FROM nginx
+
+COPY --from=builder /simpsons/public /usr/share/nginx/html
+
+EXPOSE 8000
+

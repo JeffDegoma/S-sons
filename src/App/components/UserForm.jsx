@@ -4,26 +4,6 @@ import swal from 'sweetalert';
 import ReactDOM from 'react-dom';
 
 
-// const onSubmit = ev => {
-//     ev.preventDefault();
-//     const nameReturn = ev.target.submittedName.value;
-
-//     alert(`you submitted ${nameReturn}`)
-
-// }
-
-
-// const UserForm = () => {
-//     return(
-//         <form onSubmit={onSubmit}>
-//             <label>Type here, man:
-//             <input type="text" name="submittedName" placeholder="Bart Simpson"/>
-//             </label>
-//             <input type="submit"/>
-//         </form>
-//     )
-// }
-
 class UserForm extends React.Component {
     constructor(props) {
         super(props);
@@ -42,18 +22,18 @@ class UserForm extends React.Component {
                return character.guessed = !character.guessed
             }
         }))
-        if(name.length !== 0){
+        if(name.length !== 0 ){
             this.props.handleSubmit(this.props.text) 
         }else{
-            swal(`DOH! ${this.props.text.toUpperCase()} doesn\'t exist!`)
+            swal(`Doh! ${this.props.text.toUpperCase()} doesn\'t exist!`)
         }
     }
 
     render() {
         return (
         <form onSubmit={this.handleSubmit}>
-            <label>Type here, man:
-            <input type="text" onChange={this.handleChange} value={this.props.text} name="submittedName" placeholder="apu"/>
+            <label>Type the full name, man:
+            <input type="text" onChange={this.handleChange} value={this.props.text} name="submittedName" placeholder="...El Barto"/>
             </label>
             <input type="submit"/>
         </form>

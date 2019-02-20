@@ -1,0 +1,22 @@
+# don't forget to push
+
+FROM node:6.11.4 as builder
+
+#inside the container, in root filesystem
+RUN mkdir /simpsons
+
+#becomes active working directory
+WORKDIR /simpsons
+
+#copies into active working directory. for development, copy everything.
+COPY package.json /simpsons
+
+#install dependencies
+RUN npm i
+RUN npm rebuild node-sass
+
+COPY . /simpsons
+
+CMD ["npm", "run", "start"]
+
+EXPOSE 8080

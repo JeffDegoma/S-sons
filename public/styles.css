@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background-color: #878cdf;
+  background: url(images/bg.png);
   color: #99fbc6;
   font-size: 1em; }
 
@@ -11,13 +11,21 @@ html, body {
   min-height: 100%;
   overflow: visible; }
 
-#gameTable {
-  margin: auto;
-  border: 1px solid #333333; }
+* {
+  text-decoration: none;
+  list-style-type: none; }
 
-#gameTable td {
-  background-repeat: no-repeat;
-  border: 1px solid #333333; }
+#gameTable {
+  margin: auto; }
+
+#gameTable > ul {
+  display: flex;
+  margin: 0;
+  padding: 0; }
+
+.avatar {
+  margin: auto;
+  border-radius: 50%; }
 
 .container {
   height: 100vh;
@@ -25,17 +33,21 @@ html, body {
   flex-direction: column; }
 
 .char_box {
-  margin: auto;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
-  width: 140px;
-  min-height: 140px;
-  background: url("https://avatar.artofproblemsolving.com/avatar_329151.png?t=1506894453");
+  width: 220px;
+  min-height: 180px;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  border-radius: 5px;
+  margin: 2px; }
 
 .d_extra {
   margin: auto; }
+
+.list-item {
+  padding: 10px; }
 
 .d_value {
   text-align: center;
@@ -44,6 +56,32 @@ html, body {
   min-height: 14px;
   color: #000000; }
 
-table > tbody > tr > td {
+.fader-parent {
+  justify-content: center;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  width: 100%; }
+
+.title {
+  margin: auto; }
+
+.example-enter {
+  opacity: 0.01; }
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 600ms ease-in; }
+
+.example-leave {
+  opacity: 1; }
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 5ms ease-in; }
+
+form {
+  font-size: 30px;
+  margin: auto; }
+
+form > label > input {
+  font-size: 30px; }

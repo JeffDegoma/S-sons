@@ -1,6 +1,5 @@
-import React from 'react'
-import { CSSTransitionGroup } from 'react-transition-group' // ES6
-
+import React from 'react';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 
 const Fader = ({ children }) => (
@@ -12,7 +11,6 @@ const Fader = ({ children }) => (
         >
         { children }
       </CSSTransitionGroup>
-    
 )
 
 export default Fader;

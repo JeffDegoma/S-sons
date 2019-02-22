@@ -4,21 +4,20 @@ $font-size: 1em;
 $body-bg : url('../images/bg.png');
 
 
+
 body {
     height: 100vh;
-    background: $body-bg;
     color: $brand-green;
     font-size: $font-size;   
 }
-
-
 html, body {
     padding: 0;
     margin: 0;
     height: 100%;
     min-height: 100%;
     overflow: visible;
-
+    background: url('../images/bg.png');
+    
 }
 
 * {

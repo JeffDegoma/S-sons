@@ -4,16 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
-// We write code
-// webpack reads it, 
-// compiles it, 
-// spits out a compiled version out for the browser.
 
-//4 Core concepts - Entry, Output, Loaders, Plugins
-
-//#Entry - 
-
-// takes entry point and an output which takes an object
 let config = {
     entry: './src/index.js',
     output: {
@@ -83,7 +74,8 @@ let config = {
       contentBase: path.join(__dirname, './public'),
       historyApiFallback: true,
       inline: true,
-      open: true
+      open: true,
+      host: '0.0.0.0'
     },
     devtool: 'eval-source-map'
 }

@@ -1,0 +1,17 @@
+FROM node:6.11.4 as builder
+
+#inside the container, in root filesystem
+RUN mkdir /simpsons
+
+WORKDIR /simpsons
+
+COPY package.json /simpsons
+
+RUN npm i
+RUN npm rebuild node-sass
+
+COPY . /simpsons
+
+CMD ["npm", "run", "start"]
+
+EXPOSE 8080

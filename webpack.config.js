@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -65,16 +65,18 @@ let config = {
             },
             {
                 test: /\.scss$/,
-                use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
-                    use: ['css-loader', 'sass-loader', 'sass-loader'],
-                    fallback: 'style-loader'     
-                }))
+                use: [
+                         {
+                           loader: MiniCssExtractPlugin.loader,
+                         },
+                         "css-loader"
+                       ]
             }
         ]
 
     },
     plugins: [
-        new ExtractTextWebpackPlugin('styles.css'),
+        new MiniCssExtractPlugin({filename: 'styles.css'}),
     ],
 
     devServer: {

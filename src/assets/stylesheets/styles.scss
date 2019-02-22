@@ -5,21 +5,20 @@ $font-size: 1em;
 $body-bg : url('../images/bg.png');
 
 
+
 body {
     height: 100vh;
-    background: $body-bg;
     color: $brand-green;
     font-size: $font-size;   
 }
-
-
 html, body {
     padding: 0;
     margin: 0;
     height: 100%;
     min-height: 100%;
     overflow: visible;
-
+    background: url('../images/bg.png');
+    
 }
 
 * {
@@ -117,26 +116,3 @@ form {
 form > label > input {
     font-size: 30px;
 }
-
-// .quadrants {
-//     display:flex;
-//     width: 50%;
-//     height: 50%;
-//     border: 1px solid black;
-//     margin: 0px -1px;
-// }
-
-// .pull-left {
-//     float: left;
-// }
-
-// .pull-right {
-//     float: right;
-// }
-
-
-// .q-container {
-//     margin: auto;
-//     height: 50%;
-//     width: 50%;
-// }

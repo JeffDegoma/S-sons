@@ -8,8 +8,8 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 let config = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, './public'),
-        filename: 'output.js'
+        filename: 'output.js',
+        path: path.resolve(__dirname, './public')
     },
     resolve: { // These options change how modules are resolved
         extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png'], // Automatically resolve certain extensions
@@ -57,11 +57,11 @@ let config = {
             {
                 test: /\.scss$/,
                 use: [
-                         {
-                           loader: MiniCssExtractPlugin.loader,
-                         },
-                         "css-loader"
-                       ]
+                  "style-loader",
+                  MiniCssExtractPlugin.loader,
+                  "css-loader",
+                  "sass-loader"
+                ]
             }
         ]
 
@@ -77,7 +77,7 @@ let config = {
       open: true,
       host: '0.0.0.0'
     },
-    devtool: 'eval-source-map'
+    devtool: 'inline-source-map'
 }
 
 //here we export the config object

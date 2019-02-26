@@ -4,6 +4,6 @@ import './assets/stylesheets/styles.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App/components/App.jsx';
-import character from './App/character'
+import characters from './App/characters'
 
-ReactDOM.render(<App chars={character}/>, document.getElementById('root'));
+ReactDOM.render(<App chars={characters}/>, document.getElementById('root'));

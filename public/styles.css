@@ -1,3 +1,87 @@
-body{height:100vh;color:#99fbc6;font-size:1em}body,html{padding:0;margin:0;height:100%;min-height:100%;overflow:visible;background:url(images/bg.png)}*{text-decoration:none;list-style-type:none}#gameTable{margin:auto}#gameTable>ul{display:flex;margin:0;padding:0}.avatar{margin:auto;border-radius:50%}.container{height:100vh}.char_box,.container{display:flex;flex-direction:column}.char_box{border:1px solid #000;width:220px;min-height:180px;background-repeat:no-repeat;background-position:50%;border-radius:5px;margin:2px}.d_extra{margin:auto}.list-item{padding:10px}.d_value{text-align:center;font-size:12pt;background-color:#fff;min-height:14px;color:#000}.fader-parent{justify-content:center;display:flex;flex-wrap:wrap;width:100%}.title{margin:auto}.example-enter{opacity:.01}.example-enter.example-enter-active{opacity:1;transition:opacity .6s ease-in}.example-leave{opacity:1}.example-leave.example-leave-active{opacity:.01;transition:opacity 5ms ease-in}form{margin:auto}form,form>label>input{font-size:30px}
+body {
+  height: 100vh;
+  background: url(images/bg.png);
+  color: #99fbc6;
+  font-size: 1em; }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYXNzZXRzL3N0eWxlc2hlZXRzL3N0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLEtBQUssYUFBYSxjQUFjLGNBQWMsVUFBVSxVQUFVLFNBQVMsWUFBWSxnQkFBZ0IsaUJBQWlCLDhCQUE4QixFQUFFLHFCQUFxQixxQkFBcUIsV0FBVyxZQUFZLGNBQWMsYUFBYSxTQUFTLFVBQVUsUUFBUSxZQUFZLGtCQUFrQixXQUFXLGFBQWEscUJBQXFCLGFBQWEsc0JBQXNCLFVBQVUsc0JBQXNCLFlBQVksaUJBQWlCLDRCQUE0Qix3QkFBd0Isa0JBQWtCLFdBQVcsU0FBUyxZQUFZLFdBQVcsYUFBYSxTQUFTLGtCQUFrQixlQUFlLHNCQUFzQixnQkFBZ0IsV0FBVyxjQUFjLHVCQUF1QixhQUFhLGVBQWUsV0FBVyxPQUFPLFlBQVksZUFBZSxZQUFZLG9DQUFvQyxVQUFVLCtCQUErQixlQUFlLFVBQVUsb0NBQW9DLFlBQVksK0JBQStCLEtBQUssWUFBWSxzQkFBc0IsZSIsImZpbGUiOiJzdHlsZXMuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYm9keXtoZWlnaHQ6MTAwdmg7Y29sb3I6Izk5ZmJjNjtmb250LXNpemU6MWVtfWJvZHksaHRtbHtwYWRkaW5nOjA7bWFyZ2luOjA7aGVpZ2h0OjEwMCU7bWluLWhlaWdodDoxMDAlO292ZXJmbG93OnZpc2libGU7YmFja2dyb3VuZDp1cmwoaW1hZ2VzL2JnLnBuZyl9Knt0ZXh0LWRlY29yYXRpb246bm9uZTtsaXN0LXN0eWxlLXR5cGU6bm9uZX0jZ2FtZVRhYmxle21hcmdpbjphdXRvfSNnYW1lVGFibGU+dWx7ZGlzcGxheTpmbGV4O21hcmdpbjowO3BhZGRpbmc6MH0uYXZhdGFye21hcmdpbjphdXRvO2JvcmRlci1yYWRpdXM6NTAlfS5jb250YWluZXJ7aGVpZ2h0OjEwMHZofS5jaGFyX2JveCwuY29udGFpbmVye2Rpc3BsYXk6ZmxleDtmbGV4LWRpcmVjdGlvbjpjb2x1bW59LmNoYXJfYm94e2JvcmRlcjoxcHggc29saWQgIzAwMDt3aWR0aDoyMjBweDttaW4taGVpZ2h0OjE4MHB4O2JhY2tncm91bmQtcmVwZWF0Om5vLXJlcGVhdDtiYWNrZ3JvdW5kLXBvc2l0aW9uOjUwJTtib3JkZXItcmFkaXVzOjVweDttYXJnaW46MnB4fS5kX2V4dHJhe21hcmdpbjphdXRvfS5saXN0LWl0ZW17cGFkZGluZzoxMHB4fS5kX3ZhbHVle3RleHQtYWxpZ246Y2VudGVyO2ZvbnQtc2l6ZToxMnB0O2JhY2tncm91bmQtY29sb3I6I2ZmZjttaW4taGVpZ2h0OjE0cHg7Y29sb3I6IzAwMH0uZmFkZXItcGFyZW50e2p1c3RpZnktY29udGVudDpjZW50ZXI7ZGlzcGxheTpmbGV4O2ZsZXgtd3JhcDp3cmFwO3dpZHRoOjEwMCV9LnRpdGxle21hcmdpbjphdXRvfS5leGFtcGxlLWVudGVye29wYWNpdHk6LjAxfS5leGFtcGxlLWVudGVyLmV4YW1wbGUtZW50ZXItYWN0aXZle29wYWNpdHk6MTt0cmFuc2l0aW9uOm9wYWNpdHkgLjZzIGVhc2UtaW59LmV4YW1wbGUtbGVhdmV7b3BhY2l0eToxfS5leGFtcGxlLWxlYXZlLmV4YW1wbGUtbGVhdmUtYWN0aXZle29wYWNpdHk6LjAxO3RyYW5zaXRpb246b3BhY2l0eSA1bXMgZWFzZS1pbn1mb3Jte21hcmdpbjphdXRvfWZvcm0sZm9ybT5sYWJlbD5pbnB1dHtmb250LXNpemU6MzBweH0iXSwic291cmNlUm9vdCI6IiJ9*/
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+  overflow: visible; }
+
+* {
+  text-decoration: none;
+  list-style-type: none; }
+
+#gameTable {
+  margin: auto; }
+
+#gameTable > ul {
+  display: flex;
+  margin: 0;
+  padding: 0; }
+
+.avatar {
+  margin: auto;
+  border-radius: 50%; }
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column; }
+
+.char_box {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  min-height: 180px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  margin: 2px; }
+
+.d_extra {
+  margin: auto; }
+
+.list-item {
+  padding: 10px; }
+
+.d_value {
+  text-align: center;
+  font-size: 12pt;
+  background-color: #FFFFFF;
+  min-height: 14px;
+  color: #000000; }
+
+.fader-parent {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.title {
+  margin: auto; }
+
+.example-enter {
+  opacity: 0.01; }
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 600ms ease-in; }
+
+.example-leave {
+  opacity: 1; }
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 5ms ease-in; }
+
+form {
+  font-size: 30px;
+  margin: auto; }
+
+form > label > input {
+  font-size: 30px; }

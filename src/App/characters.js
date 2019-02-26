@@ -1,4 +1,4 @@
-const character = [
+const characters = [
     {
         firstName: 'NED',
         lastName: 'FLANDERS',
@@ -101,20 +101,31 @@ const character = [
         firstName: 'MANJULA',
         lastName: 'NAHASAPEEMAPETILON',
         fullName: 'MANJULA NAHASAPEEMAPETILON',
-        imageUrl: 'https://rebrand.ly/swingbcc8',
+        imageUrl: 'https://rebrand.ly/7ycf',
         guessed: false,
     },
     {
         firstName: 'ROD',
         lastName: 'FLANDERS',
-        fullName: 'RODD FLANDERS',
-        imageUrl: 'https://rebrand.ly/c33f',
+        fullName: 'ROD FLANDERS',
+        imageUrl: 'https://rebrand.ly/df60',
+        guessed: false,
+    },
+    {
+        firstName: 'EDNA',
+        lastName: 'FLANDERS',
+        fullName: 'EDNA FLANDERS',
+        imageUrl: 'https://rebrand.ly/08fd',
+        guessed: false,
+    },
+    {
+        firstName: 'KIRK',
+        lastName: 'VAN HOUTEN',
+        fullName: 'KIRK VAN HOUTEN',
+        imageUrl: 'https://rebrand.ly/950i',
         guessed: false,
     }
-
-
-
     
 ]
 
-export default character;
+export default characters;

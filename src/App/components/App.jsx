@@ -6,7 +6,6 @@ import ReactDOM from 'react-dom';
 
 
 class App extends React.Component {
-
      constructor(props) {
         super(props);
         this.state = {
@@ -33,11 +32,11 @@ class App extends React.Component {
         })
     }
 
-    charsGuessedProp() {
-      //if they're all true?
-      let arr = [].concat(this.props.chars.filter(character => character.guessed === true))
-      console.log('charsGuessed?', arr)
-    }
+    // charsGuessedProp() {
+    //   //if they're all true?
+    //   let arr = [].concat(this.props.chars.filter(character => character.guessed === true))
+    //   console.log('charsGuessed?', arr)
+    // }
    
     render(){
       return (

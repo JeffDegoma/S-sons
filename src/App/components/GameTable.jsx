@@ -41,9 +41,9 @@ class GameTable extends React.Component {
             <div id="gameTable">
                 <ul>
                     <li>
-                    <Fader>
-                        { simpChars }
-                    </Fader>
+                        <Fader>
+                            { simpChars }
+                        </Fader>
                     </li>
                 </ul>
             </div>         

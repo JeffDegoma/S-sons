@@ -1,6 +1,5 @@
 FROM node:6.11.4 as builder
 
-#inside the container, in root filesystem
 RUN mkdir /simpsons
 
 WORKDIR /simpsons
@@ -15,5 +14,3 @@ COPY . /simpsons
 CMD ["npm", "build"]
 
 EXPOSE 8080
-
-# todo: test ssl 

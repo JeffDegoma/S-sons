@@ -11,7 +11,7 @@ let config = {
         filename: 'output.js',
         path: path.resolve(__dirname, './public')
     },
-    resolve: { // These options change how modules are resolved
+    resolve: {
         extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png'], // Automatically resolve certain extensions
         alias: { // Create aliases
           images: path.resolve(__dirname, 'src/assets/images')  // src/assets/images alias
@@ -80,7 +80,6 @@ let config = {
     devtool: 'inline-source-map'
 }
 
-//here we export the config object
 module.exports = config;
 
 

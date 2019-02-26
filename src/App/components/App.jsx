@@ -41,7 +41,7 @@ class App extends React.Component {
     render(){
       return (
         <div className="container">
-            <h2 className="title">Can you name them all?</h2>
+            <h2 className="title">Can you name them all???</h2>
             <GameTable characters={this.state.characters}
                        charName={this.state.characterName}
                        startingChars={this.props.chars}

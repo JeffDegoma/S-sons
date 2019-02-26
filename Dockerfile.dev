@@ -5,7 +5,6 @@
 >>>>>>> c59d6a57c10802372857b61c4d4e4974694d6003
 FROM node:6.11.4 as builder
 
-#inside the container, in root filesystem
 RUN mkdir /simpsons
 
 <<<<<<< HEAD
@@ -27,6 +26,6 @@ RUN npm rebuild node-sass
 
 COPY . /simpsons
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "build"]
 
 EXPOSE 8080

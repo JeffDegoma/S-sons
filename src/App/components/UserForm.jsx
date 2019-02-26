@@ -32,8 +32,8 @@ class UserForm extends React.Component {
     render() {
         return (
         <form onSubmit={this.handleSubmit}>
-            <label>Type the full name, man:
-            <input type="text" onChange={this.handleChange} value={this.props.text} name="submittedName" placeholder="...El Barto"/>
+            <label>Type here:
+            <input type="text" onChange={this.handleChange} value={this.props.text} name="submittedName" placeholder="apu"/>
             </label>
             <input type="submit"/>
         </form>

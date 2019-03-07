@@ -6,6 +6,7 @@ services:
     container_name: simpsons-prod-container
     build:
       context: .
+      # dockerfile is an nginx image
       dockerfile: ./Dockerfile.prod
     ports:
       - '80:80'

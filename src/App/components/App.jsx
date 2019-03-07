@@ -15,6 +15,7 @@ class App extends React.Component {
         }  
         this.handleChange = this.handleChange.bind(this)
         this.handleCharacterSubmit = this.handleCharacterSubmit.bind(this)
+        this.alreadyGuessed = this.alreadyGuessed.bind(this)
     }
 
     handleChange(text) {
@@ -32,11 +33,12 @@ class App extends React.Component {
         })
     }
 
-    // charsGuessedProp() {
-    //   //if they're all true?
-    //   let arr = [].concat(this.props.chars.filter(character => character.guessed === true))
-    //   console.log('charsGuessed?', arr)
-    // }
+    alreadyGuessed() {
+      //if they're all true?
+      let arr = [].concat(this.props.chars.filter(character => character.guessed === true))
+      //update state
+      return arr;
+    }
    
     render(){
       return (
@@ -53,6 +55,7 @@ class App extends React.Component {
                       text={this.state.text}
                       chars={this.props.chars} 
                       handleSubmit={this.handleCharacterSubmit}
+                      alreadyGuessed={this.alreadyGuessed}
              />
         </div>
       )

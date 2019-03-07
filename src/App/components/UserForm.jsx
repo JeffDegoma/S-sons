@@ -9,11 +9,19 @@ class UserForm extends React.Component {
         super(props);
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.alreadyGuessed = this.alreadyGuessed.bind(this)
     }
-
+  
     handleChange(ev) {
         this.props.onTextChange(ev.target.value)
     }
+
+    //if user guesses the same person already
+    alreadyGuessed() {
+        let name = [].concat(this.props.alreadyGuessed())
+        console.log(name.map(f => f.firstName))
+    }
+
 
     handleSubmit(ev) {
         ev.preventDefault()
@@ -22,8 +30,8 @@ class UserForm extends React.Component {
                return character.guessed = !character.guessed
             }
         }))
-        if(name.length !== 0 ){
-            this.props.handleSubmit(this.props.text) 
+        if(name.length !== 0){
+            this.props.handleSubmit(this.props.text)
         }else{
             swal(`Doh! ${this.props.text.toUpperCase()} doesn\'t exist!`)
         }
@@ -35,13 +43,11 @@ class UserForm extends React.Component {
             <label>Type here:
             <input type="text" onChange={this.handleChange} value={this.props.text} name="submittedName" placeholder="apu"/>
             </label>
-            <input type="submit"/>
+            <input type="submit" onClick={this.alreadyGuessed}/>
         </form>
         )
     }
 }
-
-//if user guesses the same person already
 
 
 

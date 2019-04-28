@@ -76,36 +76,17 @@ html, body {
     color:#000000;
 }
 
-
-.fader-parent {
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%
-}
+// .fader-parent {
+//   justify-content: center;
+//   display: flex;
+//   flex-wrap: wrap;
+//   width: 100%
+// }
 
 .title {
     margin: auto;
 }
-
-.example-enter {
-  opacity: 0.01;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 600ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 5ms ease-in;
-}
-
+  
 form {
     font-size: 30px;
     margin: auto
@@ -113,4 +94,11 @@ form {
 
 form > label > input {
     font-size: 30px;
+}
+
+.fader-dev {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }

@@ -1,7 +1,5 @@
 import React from 'react';
-import Fader from './Fader';
 import swal from 'sweetalert';
-import ReactDOM from 'react-dom';
 
 
 class UserForm extends React.Component {
@@ -18,23 +16,30 @@ class UserForm extends React.Component {
 
     //if user guesses the same person already
     alreadyGuessed() {
-        let name = [].concat(this.props.alreadyGuessed())
-        console.log(name.map(f => f.firstName))
+        let guessedName = [].concat(this.props.alreadyGuessed)
+        // guessedName.map((character, index) => {
+        //     console.log(character)
+        // })
+        console.log(guessedName)
     }
 
 
     handleSubmit(ev) {
         ev.preventDefault()
-        let name = [].concat(this.props.chars.filter((character, index) => {
+        let name = this.props.chars.filter((character, index) => {
             if (character.firstName === this.props.text.toUpperCase().trim() || character.fullName === this.props.text.toUpperCase().trim()){
                return character.guessed = !character.guessed
             }
-        }))
+        })
         if(name.length !== 0){
             this.props.handleSubmit(this.props.text)
         }else{
             swal(`Doh! ${this.props.text.toUpperCase()} doesn\'t exist!`)
         }
+        //functionality to handle duplicate guesses
+        //if name is in the array..
+        
+
     }
 
     render() {
@@ -43,7 +48,7 @@ class UserForm extends React.Component {
             <label>Type here:
             <input type="text" onChange={this.handleChange} value={this.props.text} name="submittedName" placeholder="apu"/>
             </label>
-            <input type="submit" onClick={this.alreadyGuessed}/>
+            <input type="submit"/>
         </form>
         )
     }

@@ -14,7 +14,7 @@ class App extends React.Component {
         }  
         this.handleChange = this.handleChange.bind(this)
         this.handleCharacterSubmit = this.handleCharacterSubmit.bind(this)
-        this.alreadyGuessed = this.alreadyGuessed.bind(this)
+        // this.alreadyGuessed = this.alreadyGuessed.bind(this)
     }
 
 
@@ -36,14 +36,14 @@ class App extends React.Component {
     }
 
     //duplicate function
-    alreadyGuessed() {
-      //if they're all true?
-      let arr = this.state.guessedChars.map(character => character)
-      //update state
-      this.setState({
-        guessedChars: arr
-      }, console.log('arr from App.jsx', arr))
-    }
+    // alreadyGuessed() {
+    //   //if they're all true?
+    //   let arr = this.state.guessedChars.map(character => character)
+    //   //update state
+    //   this.setState({
+    //     guessedChars: arr
+    //   }, console.log('arr from App.jsx', arr))
+    // }
 
     render(){
       return (

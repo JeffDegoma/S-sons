@@ -15,31 +15,31 @@ class UserForm extends React.Component {
     }
 
     //if user guesses the same person already
-    alreadyGuessed() {
-        let guessedName = [].concat(this.props.alreadyGuessed)
-        // guessedName.map((character, index) => {
-        //     console.log(character)
-        // })
-        console.log(guessedName)
+    alreadyGuessed(guessedAgain) {
+        let guessedName = this.props.alreadyGuessed
+        guessedName.map(character => {
+             if(character.firstName === guessedAgain.toUpperCase()){
+                swal(`Hey man, ${guessedAgain.toUpperCase().trim()} was already guessed!`)
+             }
+        })
     }
-
 
     handleSubmit(ev) {
         ev.preventDefault()
         let name = this.props.chars.filter((character, index) => {
             if (character.firstName === this.props.text.toUpperCase().trim() || character.fullName === this.props.text.toUpperCase().trim()){
-               return character.guessed = !character.guessed
+               return character.guessed = true
             }
         })
         if(name.length !== 0){
+            console.log(name)
             this.props.handleSubmit(this.props.text)
-        }else{
+        }else {
             swal(`Doh! ${this.props.text.toUpperCase()} doesn\'t exist!`)
         }
-        //functionality to handle duplicate guesses
-        //if name is in the array..
         
-
+        //functionality to handle duplicate guesses
+        this.alreadyGuessed(this.props.text)
     }
 
     render() {

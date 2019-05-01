@@ -4,7 +4,6 @@ $font-size: 1em;
 $body-bg : url('../images/bg.png');
 
 
-
 body {
     height: 100vh;
     color: $brand-green;
@@ -26,9 +25,7 @@ html, body {
 
 #gameTable {
     margin: auto;
-    // border: 1px solid #333333;
 }
-
 
 #gameTable > ul {
     display: flex;
@@ -75,13 +72,6 @@ html, body {
     min-height: 14px;
     color:#000000;
 }
-
-// .fader-parent {
-//   justify-content: center;
-//   display: flex;
-//   flex-wrap: wrap;
-//   width: 100%
-// }
 
 .title {
     margin: auto;

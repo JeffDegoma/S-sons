@@ -16,10 +16,10 @@ class UserForm extends React.Component {
 
     //if user guesses the same person already
     alreadyGuessed(guessedAgain) {
-        let guessedName = this.props.alreadyGuessed
+        let guessedName = this.props.alreadyGuessed //alreadyGuessed passed from App
         guessedName.map(character => {
              if(character.firstName === guessedAgain.toUpperCase()){
-                swal(`Hey man, ${guessedAgain.toUpperCase().trim()} was already guessed!`)
+                swal(`Whoops, ${guessedAgain.toUpperCase().trim()} was already guessed!`)
              }
         })
     }

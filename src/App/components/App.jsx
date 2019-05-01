@@ -14,9 +14,7 @@ class App extends React.Component {
         }  
         this.handleChange = this.handleChange.bind(this)
         this.handleCharacterSubmit = this.handleCharacterSubmit.bind(this)
-        // this.alreadyGuessed = this.alreadyGuessed.bind(this)
     }
-
 
     handleChange(text) {
       this.setState({
@@ -31,19 +29,9 @@ class App extends React.Component {
           characterName: text,
           characters: arr,
           text: '',
-          guessedChars: guessedArr
+          guessedChars: guessedArr//store correct guesses in a separate array and pass to userform
       })
     }
-
-    //duplicate function
-    // alreadyGuessed() {
-    //   //if they're all true?
-    //   let arr = this.state.guessedChars.map(character => character)
-    //   //update state
-    //   this.setState({
-    //     guessedChars: arr
-    //   }, console.log('arr from App.jsx', arr))
-    // }
 
     render(){
       return (

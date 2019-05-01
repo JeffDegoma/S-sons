@@ -29,7 +29,7 @@ class GameTable extends React.Component {
         setTimeout(this.mountStyle, 10)
     }
 
-    render() {
+    render(){
         let simpChars;
         let name;
         

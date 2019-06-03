@@ -1,14 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
-
-
-//4 Core concepts - Entry, Output, Loaders, Plugins
-
-//#Entry - 
 
 // takes entry point and an output which takes an object
 let config = {
@@ -37,7 +32,7 @@ let config = {
             },
              {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                loaders: ['file-loader?context=src/assets/images/&name=images/[path][name].[ext]',
+                use: ['file-loader',
                     {
                     loader: 'image-webpack-loader',
                         query: {
@@ -62,16 +57,13 @@ let config = {
             },
             {
                 test: /\.scss$/,
-                use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
-                    use: ['css-loader', 'sass-loader', 'sass-loader'],
-                    fallback: 'style-loader'     
-                }))
+                use: [{loader: MiniCssExtractPlugin.loader}, 'css-loader']
             }
         ]
 
     },
     plugins: [
-        new ExtractTextWebpackPlugin('styles.css'),
+        new MiniCssExtractPlugin({filename: 'styles.css'}),    
     ],
 
     devServer: {

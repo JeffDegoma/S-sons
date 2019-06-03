@@ -89,7 +89,6 @@ let config = {
 
     devServer: {
       contentBase: path.join(__dirname, './public'),
-      historyApiFallback: true,
       inline: true,
       open: true,
       host: '0.0.0.0'

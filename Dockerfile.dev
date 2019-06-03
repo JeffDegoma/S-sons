@@ -1,4 +1,3 @@
-# don't forget to push
 
 FROM node:6.11.4 as builder
 

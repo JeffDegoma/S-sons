@@ -3,6 +3,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 
 // takes entry point and an output which takes an object
@@ -32,7 +33,7 @@ let config = {
             },
              {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                use: ['file-loader',
+                loaders: ['file-loader',
                     {
                     loader: 'image-webpack-loader',
                         query: {
@@ -57,13 +58,33 @@ let config = {
             },
             {
                 test: /\.scss$/,
-                use: [{loader: MiniCssExtractPlugin.loader}, 'css-loader']
-            }
+                use: [
+                    "style-loader", 
+                    "css-loader", 
+                    "sass-loader",
+                  ]
+            },
+            {
+                test: /\.html$/,
+                use: [
+                  {
+                    loader: "html-loader",
+                    options: { minimize: true }
+                  }
+                ]
+              }
         ]
 
     },
     plugins: [
-        new MiniCssExtractPlugin({filename: 'styles.css'}),    
+        new HtmlWebPackPlugin({
+            template: "./src/index.html",
+            filename: "./index.html"
+          }),
+          new MiniCssExtractPlugin({
+            filename: 'styles.css',
+            chunkFilename: '[id].css',
+          }),
     ],
 
     devServer: {
@@ -83,6 +104,9 @@ module.exports = config;
 if(process.env.NODE_ENV === 'production') {
     module.exports.plugins.push(
         new webpack.optimize.UglifyJsPlugin(),
-        new OptimizeCssAssetsWebpackPlugin()
+        new OptimizeCssAssetsWebpackPlugin(),
+        new MiniCssExtractPlugin({
+          filename: "styles.css",
+        })
     )
 }

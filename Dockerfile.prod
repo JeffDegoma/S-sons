@@ -1,4 +1,4 @@
-FROM node:6.11.4 as builder
+FROM node:10.15.3 as builder
 
 #inside the container, in root filesystem
 RUN mkdir /simpsons
@@ -11,15 +11,16 @@ COPY . .
 
 #install dependencies
 RUN npm i
-RUN npm rebuild node-sass
 
+RUN npm rebuild node-sass
 RUN npm run build
 
 
 # Copy built app into nginx container
-FROM nginx
+FROM localhost:5000/waf_web:latest
 
-COPY --from=builder /simpsons/public /usr/share/nginx/html
+COPY --from=builder /simpsons/public /usr/local/nginx/html
 
-EXPOSE 8000
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
 

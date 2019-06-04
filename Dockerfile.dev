@@ -1,5 +1,5 @@
 
-FROM node:6.11.4 as builder
+FROM node:10.15.3
 
 #inside the container, in root filesystem
 RUN mkdir /simpsons
@@ -12,7 +12,6 @@ COPY package.json /simpsons
 
 #install dependencies
 RUN npm i
-RUN npm rebuild node-sass
 
 COPY . /simpsons
 

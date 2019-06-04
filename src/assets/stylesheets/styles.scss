@@ -89,23 +89,21 @@ html, body {
     margin: auto;
 }
 
-.example-enter {
-  opacity: 0.01;
+form {
+    font-size: 30px;
+    margin: auto
+}
+form > label > input {
+    font-size: 30px;
 }
 
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 600ms ease-in;
-}
+.fader-dev {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+} 
 
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 5ms ease-in;
-}
 
 form {
     font-size: 30px;

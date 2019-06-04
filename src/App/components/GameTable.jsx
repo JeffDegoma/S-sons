@@ -6,6 +6,28 @@ import Fader from './Fader';
 class GameTable extends React.Component {
     constructor(props){
         super(props)
+        this.mountStyle = this.mountStyle.bind(this)
+
+        this.state={ //base css for gameTable component
+            show: true,
+            style: {
+                opacity: 0,
+                transition: 'all 2.5s ease',
+            }
+        }
+    }
+
+    mountStyle(){
+        this.setState({
+            style: {
+                opacity: 1,
+                transition: 'all 4s ease',
+            }
+        })
+    }
+
+    componentDidMount(){
+        setTimeout(this.mountStyle, 10)
     }
 
     render() {
@@ -38,12 +60,10 @@ class GameTable extends React.Component {
         }
 
         return (
-            <div id="gameTable">
+            <div id="gameTable" style={this.state.style}>
                 <ul>
                     <li>
-                        <Fader>
-                            { simpChars }
-                        </Fader>
+                        <span className="fader-dev">{simpChars}</span>
                     </li>
                 </ul>
             </div>         

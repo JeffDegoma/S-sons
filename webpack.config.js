@@ -3,8 +3,10 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 
+// takes entry point and an output which takes an object
 let config = {
     entry: './src/index.js',
     output: {
@@ -22,16 +24,22 @@ let config = {
             {
                 test: /\.js$/, // files ending with .js
                 exclude: /node_modules/, // exclude the node_modules directory
-                loader: "babel-loader" // use this (babel-core) loader
+                loader: "babel-loader", // use this (babel-core) loader
+                options: {
+                  presets: ['@babel/preset-env']
+                }
             },
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                loader: "babel-loader",
+                options: {
+                  presets: ['@babel/preset-env']
+                }
             },
              {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                loaders: ['file-loader?context=src/assets/images/&name=images/[path][name].[ext]',
+                loaders: ['file-loader',
                     {
                     loader: 'image-webpack-loader',
                         query: {
@@ -57,22 +65,36 @@ let config = {
             {
                 test: /\.scss$/,
                 use: [
-                  "style-loader",
-                  MiniCssExtractPlugin.loader,
-                  "css-loader",
-                  "sass-loader"
+                    "style-loader", 
+                    "css-loader", 
+                    "sass-loader",
+                  ]
+            },
+            {
+                test: /\.html$/,
+                use: [
+                  {
+                    loader: "html-loader",
+                    options: { minimize: true }
+                  }
                 ]
-            }
+              }
         ]
 
     },
     plugins: [
-        new MiniCssExtractPlugin({filename: 'styles.css'}),
+        new HtmlWebPackPlugin({
+            template: "./src/index.html",
+            filename: "./index.html"
+          }),
+          new MiniCssExtractPlugin({
+            filename: 'styles.css',
+            chunkFilename: '[id].css',
+          }),
     ],
 
     devServer: {
       contentBase: path.join(__dirname, './public'),
-      historyApiFallback: true,
       inline: true,
       open: true,
       host: '0.0.0.0'
@@ -86,6 +108,9 @@ module.exports = config;
 if(process.env.NODE_ENV === 'production') {
     module.exports.plugins.push(
         new webpack.optimize.UglifyJsPlugin(),
-        new OptimizeCssAssetsWebpackPlugin()
+        new OptimizeCssAssetsWebpackPlugin(),
+        new MiniCssExtractPlugin({
+          filename: "styles.css",
+        })
     )
 }

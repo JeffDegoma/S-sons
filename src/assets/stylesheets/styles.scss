@@ -76,7 +76,23 @@ html, body {
 .title {
     margin: auto;
 }
-  
+
+form {
+    font-size: 30px;
+    margin: auto
+}
+form > label > input {
+    font-size: 30px;
+}
+
+.fader-dev {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+} 
+
+
 form {
     font-size: 30px;
     margin: auto

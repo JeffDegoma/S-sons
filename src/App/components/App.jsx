@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import UserForm from './UserForm'
 import GameTable from './GameTable'
-
-
 class App extends React.Component {
      constructor(props) {
         super(props);
@@ -10,11 +8,12 @@ class App extends React.Component {
             text: '',
             characterName: '',
             characters: {},
-            guessedChars:{}//real data should come from a database
+            guessedChars:[]//real data should come from a database
         }  
         this.handleChange = this.handleChange.bind(this)
         this.handleCharacterSubmit = this.handleCharacterSubmit.bind(this)
     }
+
 
     handleChange(text) {
       this.setState({
@@ -24,14 +23,15 @@ class App extends React.Component {
 
     handleCharacterSubmit(text) {
       let arr = [].concat(this.props.chars.filter(character => character.guessed !== true))
-      let guessedArr = [].concat(this.props.chars.filter(character => character.guessed === true))
+      let guessedChars = [].concat(this.props.chars.filter(character => character.guessed === true))
       this.setState({
           characterName: text,
           characters: arr,
           text: '',
-          guessedChars: guessedArr//store correct guesses in a separate array and pass to userform
+          guessedChars//store correct guesses in a separate array and pass to userform
       })
     }
+
 
     render(){
       return (
@@ -53,5 +53,4 @@ class App extends React.Component {
       )
     }
 }
-
 export default App;

@@ -1,7 +1,6 @@
 import React from 'react';
 import swal from 'sweetalert';
 
-
 class UserForm extends React.Component {
     constructor(props) {
         super(props);
@@ -16,14 +15,14 @@ class UserForm extends React.Component {
 
     //if user guesses the same person already
     alreadyGuessed(guessedAgain) {
-        let guessedName = this.props.alreadyGuessed //alreadyGuessed passed from App
+        let guessedName = this.props.alreadyGuessed
         guessedName.map(character => {
              if(character.firstName === guessedAgain.toUpperCase()){
                 swal(`Whoops, ${guessedAgain.toUpperCase().trim()} was already guessed!`)
              }
         })
+        
     }
-
     handleSubmit(ev) {
         ev.preventDefault()
         let name = this.props.chars.filter((character, index) => {
@@ -41,7 +40,6 @@ class UserForm extends React.Component {
         //functionality to handle duplicate guesses
         this.alreadyGuessed(this.props.text)
     }
-
     render() {
         return (
         <form onSubmit={this.handleSubmit}>
@@ -53,7 +51,4 @@ class UserForm extends React.Component {
         )
     }
 }
-
-
-
 export default UserForm;

@@ -1,4 +1,4 @@
-FROM node:6.11.4 as builder
+FROM node:10.15.3
 
 RUN mkdir /simpsons
 
@@ -7,7 +7,6 @@ WORKDIR /simpsons
 COPY package.json /simpsons
 
 RUN npm i
-RUN npm rebuild node-sass
 
 COPY . /simpsons
 

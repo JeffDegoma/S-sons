@@ -1,0 +1,13 @@
+FROM node:carbon
+
+RUN mkdir /simpsons
+
+WORKDIR /simpsons
+
+COPY package.json /simpsons
+
+RUN npm i
+
+COPY . /simpsons
+
+CMD ["npm", "test"]

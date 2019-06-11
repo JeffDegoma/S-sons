@@ -13,7 +13,7 @@ node {
       sh 'docker build -t app-test -f Dockerfile.test --no-cache . '
     }
     stage('Docker test'){
-      sh 'docker run --rm react-test'
+      sh 'docker run --rm app-test'
     }
 
   }

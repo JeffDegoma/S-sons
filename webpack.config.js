@@ -6,7 +6,6 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 
-// takes entry point and an output which takes an object
 let config = {
     entry: './src/index.js',
     output: {
@@ -15,16 +14,16 @@ let config = {
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png'], // Automatically resolve certain extensions
-        alias: { // Create aliases
-          images: path.resolve(__dirname, 'src/assets/images')  // src/assets/images alias
+        alias: {
+          images: path.resolve(__dirname, 'src/assets/images') 
         }
     },
     module: {
         rules: [
             {
-                test: /\.js$/, // files ending with .js
-                exclude: /node_modules/, // exclude the node_modules directory
-                loader: "babel-loader", // use this (babel-core) loader
+                test: /\.js$/, 
+                exclude: /node_modules/,
+                loader: "babel-loader",
                 options: {
                   presets: ['@babel/preset-env']
                 }

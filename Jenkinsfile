@@ -12,10 +12,12 @@ node {
     stage('build docker test file') {
       sh 'docker build -t app-test -f Dockerfile.test --no-cache . '
     }
-    stage('Docker test'){
+    stage('Docker test') {
       sh 'docker run --rm app-test'
     }
-
+    stage('Docker build'){
+      sh 'docker build -t app_dev_build -f Dockerfile.dev --no-cache .'
+    } 
   }
   catch (err) {
     throw err

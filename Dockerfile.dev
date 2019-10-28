@@ -1,31 +1,19 @@
-<<<<<<< HEAD
 # don't forget to push
 
-=======
->>>>>>> c59d6a57c10802372857b61c4d4e4974694d6003
 FROM node:6.11.4 as builder
 
 RUN mkdir /simpsons
 
-<<<<<<< HEAD
-#becomes active working directory
-WORKDIR /simpsons
-
-#copies into active working directory. for development, copy everything.
-COPY package.json /simpsons
-
-#install dependencies
-=======
 WORKDIR /simpsons
 
 COPY package.json /simpsons
 
->>>>>>> c59d6a57c10802372857b61c4d4e4974694d6003
 RUN npm i
 RUN npm rebuild node-sass
 
 COPY . /simpsons
 
-CMD ["npm", "build"]
-
-EXPOSE 8080
+FROM nginx:latest
+COPY --from=builder /simpsons/public /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

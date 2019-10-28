@@ -13,7 +13,7 @@ RUN npm rebuild node-sass
 
 COPY . /simpsons
 
-FROM nginx:latest
+FROM localhost:5000/nginx_waf
 COPY --from=builder /simpsons/public /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

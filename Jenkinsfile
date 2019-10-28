@@ -10,13 +10,14 @@ node {
       sh 'printenv'
     }
     stage('build docker test file') {
-      when {branch 'jhd/dev/test'}
-      steps{
-        sh 'docker build -t app-test -f Dockerfile.test --no-cache . '
+      if (env.BRANCH_NAME == 'jhd/dev/test'){
+        steps{
+          sh 'docker build -t app-test -f Dockerfile.test --no-cache . '
+        }
       }
     }
     stage('Docker build'){
-      sh 'docker build -t app_dev_build -f Dockerfile.dev --no-cache .'
+      sh 'docker build -t s-sons_dev_build -f Dockerfile.dev --no-cache .'
     } 
   }
   catch (err) {

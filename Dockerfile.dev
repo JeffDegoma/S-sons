@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 FROM node:10.15.3
+=======
+# don't forget to push
+
+FROM node:6.11.4 as builder
+>>>>>>> jhd/dev/revamp
 
 RUN mkdir /simpsons
 
@@ -10,6 +16,7 @@ RUN npm i
 
 COPY . /simpsons
 
-CMD ["npm", "build"]
-
-EXPOSE 8080
+FROM localhost:5000/nginx_waf
+COPY --from=builder /simpsons/public /usr/local/nginx/html/
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

@@ -12,7 +12,12 @@ COPY . /simpsons
 
 RUN npm run build
 
+<<<<<<< HEAD
 FROM localhost:5000/waf_web:latest
 COPY --from=builder /simpsons/public /usr/local/nginx/html
+=======
+FROM ny_times_waf:latest
+COPY --from=builder /simpsons/public /usr/share/nginx/html
+>>>>>>> jhd/dev/revamp
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

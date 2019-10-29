@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  web:
+    container_name: simpsons-prod-container
+    build:
+      context: .
+      dockerfile: ./Dockerfile.prod
+    ports:
+      - '80:80'
+    networks:
+      - default
+
+networks:
+  default:

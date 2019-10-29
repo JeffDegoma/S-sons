@@ -13,6 +13,6 @@ COPY . /simpsons
 RUN npm run build
 
 FROM localhost:5000/nginx_waf
-COPY --from=builder /simpsons/public /usr/share/nginx/html
+COPY --from=builder /simpsons/public /usr/local/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

@@ -1,5 +1,3 @@
-# don't forget to push
-
 FROM node:6.11.4 as builder
 
 RUN mkdir /simpsons
@@ -11,6 +9,8 @@ COPY package.json /simpsons
 RUN npm i
 
 COPY . /simpsons
+
+RUN npm build
 
 FROM localhost:5000/nginx_waf
 COPY --from=builder /simpsons/public /usr/local/nginx/html/

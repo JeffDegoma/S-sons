@@ -17,7 +17,7 @@ node {
       }
     }
     stage('Docker build'){
-      sh 'docker build -t s-sons_dev_build -f Dockerfile.dev --no-cache .'
+      sh 'docker-compose -f docker-compose.yml up -d'
     } 
   }
   catch (err) {

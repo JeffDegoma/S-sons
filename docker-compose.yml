@@ -6,12 +6,7 @@ services:
     container_name: simpsons-dev-container
     build:
       context: .
-<<<<<<< HEAD
-      # dockerfile is an nginx image
-      dockerfile: ./Dockerfile.prod
-=======
       dockerfile: ./Dockerfile.dev
->>>>>>> jhd/dev/revamp
     ports:
       - '80:80'
     networks:

@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-FROM node:10.15.3
-=======
 # don't forget to push
 
 FROM node:6.11.4 as builder
->>>>>>> jhd/dev/revamp
 
 RUN mkdir /simpsons
 

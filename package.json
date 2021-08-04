@@ -52,6 +52,6 @@
     "jest-enzyme": "^7.0.2",
     "react-transition-group": "^1.2.1",
     "sweetalert": "^2.1.0",
-    "tar": "^4.4.9"
+    "tar": "^4.4.15"
   }
 }
